@@ -140,7 +140,7 @@ form div {
     padding: 10px 0px;
 }
 
-    form div label {
+  	 form div label {
         width: 200px;
         display: inline-block;
         vertical-align: top;
@@ -152,6 +152,11 @@ form .field-validation-error {
     color: red;
     font-size: 13px;
     font-weight: bold;
+}
+.formSubmitButton{
+	display: relative;
+	margin-left: auto;
+	margin-right:auto;
 }
 
 form button {
@@ -176,6 +181,32 @@ table td {
     min-width: 75px;
     padding: 5px 5px;
 }
+
+/* weight calculator ******************************************************** */
+.alienWeightCalcResults {
+	display: block;
+	width: 90%;
+	margin-left: 10px;
+}
+
+#planetPic {
+	display: inline-block;
+	width: 200px;
+}
+
+#planetPic img{
+	width: 100%;
+	border-radius: 5%;
+}
+	
+#planetWeightText {
+	display: inline-block;
+	text-align: left;
+	width: 65%;
+	vertical-align: top;
+	margin-top: 20px;
+}
+
 
 
 

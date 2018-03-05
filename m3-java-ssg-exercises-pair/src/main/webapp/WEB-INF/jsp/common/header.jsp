@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +24,8 @@
         <p> Use these state of the art web applications to learn more about the solar system! </p>
         <ul>
             <li><a href="#">Alien Age</a></li>
-            <li><a href="#">Alien Weight</a></li>
+            <c:url var="alienWeightInput" value="/alienWeightInput"/>
+            <li><a href="${alienWeightInput}">Alien Weight</a></li>
             <li><a href="#">Drive Time</a></li>               
         </ul>
     </nav>
