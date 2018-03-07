@@ -11,7 +11,6 @@ import com.techelevator.ssg.model.calculate.AlienWeightCalculator;
 @Controller
 public class AlienWeightController{
 
-
 	@RequestMapping(path="/alienWeightInput", method=RequestMethod.GET)
 	public String displayAlienWeight() {
 		return "alienWeightInput";

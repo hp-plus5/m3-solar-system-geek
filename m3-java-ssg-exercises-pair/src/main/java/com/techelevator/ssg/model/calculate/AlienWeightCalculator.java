@@ -37,15 +37,3 @@ public double getCalculateWeight() {
 	return planetNamesToNum.get(planet) * earthWeight;
 	}
 }
-
-
-//<option value="0">Select</option>
-//<option value="27.95">Sun</option>
-//<option value=".37">Mercury</option>
-//<option value=".9">Venus</option>
-//<option value=".38">Mars</option>
-//<option value="2.65">Jupiter</option>
-//<option value="1.13">Saturn</option>
-//<option value="1.09">Uranus</option>
-//<option value="1.43">Neptune</option>
-//<option value=".04">Pluto</option>

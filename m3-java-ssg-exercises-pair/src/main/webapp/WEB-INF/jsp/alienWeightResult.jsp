@@ -17,7 +17,6 @@
  	<c:out value="${weight.planet}"/>.</span>
 </div>
 
-
 </div> <!-- alienWeightCalcResults -->
 
 </section>
