@@ -21,6 +21,10 @@ p, label, div.form-field {
     font-size: 14px;
 }
 
+p:nth-child(even).testingColor {
+	background-color: #e3e0ec;
+}
+
 header {
     margin: 25px;
 }
