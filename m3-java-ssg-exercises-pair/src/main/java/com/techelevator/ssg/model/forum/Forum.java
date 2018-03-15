@@ -2,7 +2,7 @@ package com.techelevator.ssg.model.forum;
 
 import java.time.LocalDateTime;
 
-public class ForumPost {
+public class Forum {
 	private Long id;
 	private String username;
 	private String subject;

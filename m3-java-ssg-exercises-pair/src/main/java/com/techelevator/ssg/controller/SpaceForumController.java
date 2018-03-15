@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.techelevator.ssg.model.forum.Forum;
 import com.techelevator.ssg.model.forum.ForumDao;
-import com.techelevator.ssg.model.forum.ForumPost;
 
 @Controller
 public class SpaceForumController {
@@ -19,7 +19,7 @@ public class SpaceForumController {
 	private ForumDao forumDao;
 
 	@RequestMapping(path="/spaceForum", method=RequestMethod.GET)
-	public String displayDriveTime(ModelMap modelHolder) {
+	public String displaySpaceForum(ModelMap modelHolder) { //This used to be "DisplayDriveTime"??
 			modelHolder.put("forumPost", forumDao.getAllPosts());	
 		return "spaceForum";
 	}
@@ -32,7 +32,7 @@ public class SpaceForumController {
 	@RequestMapping(path="/submitForumPost", method=RequestMethod.POST)
 	public String savePosts(@RequestParam String username, @RequestParam String subject, @RequestParam String message) {
 		LocalDateTime postTime = LocalDateTime.now();
-		ForumPost post = new ForumPost();
+		Forum post = new Forum();
 		
 		post.setUsername(username);
 		post.setSubject(subject);

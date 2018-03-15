@@ -16,7 +16,7 @@ import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.techelevator.ssg.DAOIntegrationTest;
-import com.techelevator.ssg.model.forum.ForumPost;
+import com.techelevator.ssg.model.forum.Survey;
 import com.techelevator.ssg.model.forum.JdbcForumDao;
 
 public class JdbcForumDaoIntegrationTest extends DAOIntegrationTest {
@@ -36,27 +36,27 @@ public class JdbcForumDaoIntegrationTest extends DAOIntegrationTest {
 	
 	@Test
 	public void saved_posts_are_returned_in_list_of_all_posts() {
-		ForumPost post1 = createForumPost("Mickey Mouse", "Composition of Moon", "Is it true that the Moon is made of cheese?");
-		ForumPost post2 = createForumPost("Marvin the Martian", "Earth", "I'm going to blow it up; it obstructs my view of Venus.");
+		Survey post1 = createForumPost("Mickey Mouse", "Composition of Moon", "Is it true that the Moon is made of cheese?");
+		Survey post2 = createForumPost("Marvin the Martian", "Earth", "I'm going to blow it up; it obstructs my view of Venus.");
 		
 		dao.save(post1);
 		dao.save(post2);
 		
-		List<ForumPost> results = dao.getAllPosts();
+		List<Survey> results = dao.getAllPosts();
 
 		assertThat(results, hasItem(equalTo(post1)));
 		assertThat(results, hasItem(equalTo(post2)));
 		assertThat(results.size(), CoreMatchers.equalTo(2));
 	}
 	
-	private Matcher<ForumPost> equalTo(final ForumPost expected) {
-		return new TypeSafeMatcher<ForumPost>() {
+	private Matcher<Survey> equalTo(final Survey expected) {
+		return new TypeSafeMatcher<Survey>() {
 
 			public void describeTo(Description desc) {
 				
 			}
 
-			protected boolean matchesSafely(ForumPost post) {
+			protected boolean matchesSafely(Survey post) {
 				return nullOrEqual(expected.getId(), post.getId()) &&
 						nullOrEqual(expected.getUsername(), post.getUsername()) &&
 						nullOrEqual(expected.getSubject(), post.getSubject()) &&
@@ -71,8 +71,8 @@ public class JdbcForumDaoIntegrationTest extends DAOIntegrationTest {
 		};
 	}
 
-	private ForumPost createForumPost(String username, String subject, String message) {
-		ForumPost post = new ForumPost();
+	private Survey createForumPost(String username, String subject, String message) {
+		Survey post = new Survey();
 		post.setUsername(username);
 		post.setSubject(subject);
 		post.setMessage(message);

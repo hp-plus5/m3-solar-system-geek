@@ -21,12 +21,12 @@ public class JdbcForumDao implements ForumDao {
 	}
 
 	@Override
-	public List<ForumPost> getAllPosts() {
-		List<ForumPost> allPosts = new ArrayList<>();
+	public List<Forum> getAllPosts() {
+		List<Forum> allPosts = new ArrayList<>();
 		String sqlSelectAllPosts = "SELECT * FROM forum_post";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllPosts);
 		while(results.next()) {
-			ForumPost post = new ForumPost();
+			Forum post = new Forum();
 			post.setId(results.getLong("id"));
 			post.setUsername(results.getString("username"));
 			post.setSubject(results.getString("subject"));
@@ -38,7 +38,7 @@ public class JdbcForumDao implements ForumDao {
 	}
 
 	@Override
-	public void save(ForumPost post) {
+	public void save(Forum post) {
 		Long id = getNextId();
 		String sqlInsertPost = "INSERT INTO forum_post(id, username, subject, message, post_date) VALUES (?,?,?,?,?)";
 		jdbcTemplate.update(sqlInsertPost, id, post.getUsername(), post.getSubject(), post.getMessage(), post.getDatePosted());
